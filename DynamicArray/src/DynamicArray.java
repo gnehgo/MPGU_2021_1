@@ -2,12 +2,18 @@ public class DynamicArray<T> {
     private void throwException() {
         throw new ArithmeticException("Слышь тебе сюда нельзя");
 } public int size(){
-        return array.length;
+        int number = 0;
+        for(int i = 0; i < capacity(); i++){
+            if(array[i] != null){
+                number = i;
+            }}
+        return number + 1;
     }
         private final int DEFAULT_SIZE = 10;
         private T[] array;
 
         public DynamicArray(){
+
             array = (T[])new Object[DEFAULT_SIZE];
         }
 
@@ -31,7 +37,6 @@ public class DynamicArray<T> {
     public int capacity(){
         return array.length;
     }
-
 }
 
 
