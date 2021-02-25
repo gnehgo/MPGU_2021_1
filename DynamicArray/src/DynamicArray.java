@@ -79,6 +79,11 @@ public class DynamicArray<T> {
         }
         array[index] = value;
     }
+    public void remove(int index){
+        if(capacity() <= index | index < 0){throwException();}
+        array[index] = null;
+        if (capacity() - 1 - index >= 0) System.arraycopy(array, index + 1, array, index, capacity() - 1 - index);
+    }
 }
 
 
