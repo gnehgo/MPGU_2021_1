@@ -59,6 +59,26 @@ public class DynamicArray<T> {
         }
         set(size(), value);
     }
+    public void insert(int index, T value){
+        if(index < 0){throwException();}
+        int number = -1;
+        if(index >= capacity()){
+            resize(Math.max(capacity() * 2+ 1, index + 1));
+        }
+        if (array[index] != null) {
+            int PreviousSize = capacity();
+            for (int i = 0; i < capacity(); i++) {
+                if (array[i] != null) {
+                    number = i;
+                }
+            }
+            if (number == capacity() - 1) {
+                resize(capacity() * 2 + 1);
+            }
+            if (PreviousSize - index >= 0) System.arraycopy(array, index, array, index + 1, PreviousSize - index);
+        }
+        array[index] = value;
+    }
 }
 
 
