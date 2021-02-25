@@ -37,6 +37,14 @@ public class DynamicArray<T> {
     public int capacity(){
         return array.length;
     }
+    public int FindFirst(T value){
+            for(int i= capacity();i>-1;i--){
+                if(array[i] == value){
+                    return i;
+                }
+            }
+             return -1;
+    }
 }
 
 
