@@ -28,6 +28,10 @@ public class DynamicArray<T> {
                 array[i] = newArray[i];
             }
         }
+    public int capacity(){
+        return array.length;
+    }
+
 }
 
 
