@@ -38,12 +38,20 @@ public class DynamicArray<T> {
         return array.length;
     }
     public int FindFirst(T value){
-            for(int i= capacity();i>-1;i--){
+            for(int i=0;i<capacity();i++){
                 if(array[i] == value){
                     return i;
                 }
             }
              return -1;
+    }
+    public int FindLast(T value){
+        for(int i= capacity();i>-1;i--){
+            if(array[i] == value){
+                return i;
+            }
+        }
+        return -1;
     }
 }
 
