@@ -53,6 +53,12 @@ public class DynamicArray<T> {
         }
         return -1;
     }
+    public void add(T value){
+        if (size() >= capacity()) {
+            resize((capacity() * 2) + 1);
+        }
+        set(size(), value);
+    }
 }
 
 
